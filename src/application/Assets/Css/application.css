@@ -1,0 +1,14 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+.side-background{
+	-fx-background-color:#2A4473;
+}
+.container-bg{
+	-fx-background-color:#EBF0F7;
+}
+.white{
+	-fx-background-color:#FFFFFF;
+}
+.smooth-edge{
+	-fx-border-radius:10px;
+	-fx-background-radius: 10px;
+}
