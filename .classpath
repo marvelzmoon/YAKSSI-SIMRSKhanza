@@ -8,5 +8,6 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER"/>
 	<classpathentry kind="lib" path="D:/Project/java/lib/jfoenix-9.0.9.jar"/>
+	<classpathentry kind="lib" path="D:/Project/java/plugin/json-20171018.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

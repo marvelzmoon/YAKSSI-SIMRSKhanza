@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="150.0" prefWidth="400.0" style="-fx-background-color: rgba(57,136,151,1);" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.WarningController">
+    <stylesheets>
+        <URL value="@../../assets/css/warning.css" />
+    </stylesheets>
+   <children>
+      <JFXButton id="warningOKBtn" fx:id="warningOKBtn" layoutX="166.0" layoutY="94.0" onAction="#closeDialog" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #002d3f;" text="OK" textFill="WHITE" />
+      <Label fx:id="warningText" layoutX="15.0" layoutY="40.0" prefHeight="17.0" prefWidth="371.0" style="-fx-alignment: center;" text="Place Text Here" textAlignment="CENTER" />
+   </children>
+   <effect>
+      <DropShadow />
+   </effect>
+</AnchorPane>

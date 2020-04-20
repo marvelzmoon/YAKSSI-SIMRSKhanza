@@ -11,7 +11,6 @@ import javafx.stage.WindowEvent;
 import javafx.util.Duration;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
 
 
 public class Main extends Application {

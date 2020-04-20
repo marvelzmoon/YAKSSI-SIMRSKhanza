@@ -1,5 +1,6 @@
 package application.Controllers.layout;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -7,7 +8,9 @@ import com.jfoenix.controls.JFXButton;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.layout.AnchorPane;
 import application.Modules.effects.transition;
 
@@ -29,10 +32,24 @@ public class Controller implements Initializable {
 
     @FXML
     private JFXButton sidebarBtn;
+    
+    @FXML
+    private AnchorPane contentArea;
 
     @FXML
     void toggleSidebarEvent(ActionEvent event) {
     	toggleSideBar();
+    }
+    @FXML
+    void openRawatJalan(ActionEvent event) {
+    	try {
+			Parent root = FXMLLoader.load(getClass().getResource("/application/views/perawatan/rawatjalan.fxml"));
+			contentArea.getChildren().setAll(root);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
     }
 	private void toggleSideBar() {
 		double w = sideBar.getPrefWidth();
