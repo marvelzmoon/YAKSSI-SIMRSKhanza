@@ -13,11 +13,11 @@ import org.json.JSONObject;
 
 
 public class Http {
-	private static String apiServer = "http://192.168.1.1/";
-	public static String apiHost = apiServer+"serversim/api/";
+	private static String apiHost = "http://192.168.1.1/";
+	public static String  api= apiHost+"serversim/api/";
 	public static boolean checkConnection() {
         try {
-            URL url = new URL(apiServer+"api/general/checkConnection");
+            URL url = new URL(api+"general/checkConnection");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 
             conn.setRequestMethod("GET");
@@ -27,12 +27,9 @@ public class Http {
 	                Warning.showWarning("Failed : HTTP error code : "
 	                        + conn.getResponseCode()); 
 	                return false;
-//	                    throw new RuntimeException("Failed : HTTP error code : "
-//	                                    + conn.getResponseCode());
             }else {
                 return true;
             }
-//	            conn.disconnect();
 
         } catch (MalformedURLException e) {
             return false;
@@ -43,7 +40,7 @@ public class Http {
 	public static String getDataJSON(String targetUrl) {
 		if(checkConnection()) {
 	        try {
-	            URL url = new URL(targetUrl);
+	            URL url = new URL(api+targetUrl);
 	            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 
 	            conn.setRequestMethod("GET");
@@ -69,13 +66,11 @@ public class Http {
 	}
 	public static boolean doAction(String targetUrl) {
         try {
-            URL url = new URL(apiServer+targetUrl);
+            URL url = new URL(api+targetUrl);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 
             conn.setRequestMethod("GET");
             conn.setRequestProperty("Accept", "application/json");
-//	            System.out.println(url);
-//	            System.out.println(conn.getResponseCode());
             if (conn.getResponseCode() != 200) {
 	                Warning.showWarning("Failed : HTTP error code : "
 	                        + conn.getResponseCode()); 
@@ -102,8 +97,6 @@ public class Http {
 	    try {
 	        new JSONObject(test);
 	    } catch (JSONException ex) {
-	        // edited, to include @Arthur's comment
-	        // e.g. in case JSONArray is valid as well...
 	        try {
 	            new JSONArray(test);
 	        } catch (JSONException ex1) {

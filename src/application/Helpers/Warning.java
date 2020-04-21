@@ -25,7 +25,7 @@ public class Warning {
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.initStyle(StageStyle.UNDECORATED);
         
-        final FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/views/Warning.fxml"));
+        final FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/Views/main/Warning.fxml"));
         final Parent root = loader.load();
         root.setOnMousePressed((MouseEvent event) -> {
             xOffset = event.getSceneX();
